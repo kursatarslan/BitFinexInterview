@@ -1,0 +1,3 @@
+obj/Debug/net8.0/Proto/Clientserver.cs \
+obj/Debug/net8.0/Proto/ClientserverGrpc.cs: /Users/kursat.arslan/.nuget/packages/grpc.tools/2.62.0/build/native/include/google/protobuf/empty.proto\
+ Proto/clientserver.proto

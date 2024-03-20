@@ -1,0 +1,2 @@
+obj/Debug/net8.0/Clientregister.cs \
+obj/Debug/net8.0/ClientregisterGrpc.cs: clientregister.proto

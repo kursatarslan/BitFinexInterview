@@ -1,0 +1,6 @@
+@AuctioneerService_HostAddress = http://localhost:5102
+
+GET {{AuctioneerService_HostAddress}}/registration/
+Accept: application/json
+
+###

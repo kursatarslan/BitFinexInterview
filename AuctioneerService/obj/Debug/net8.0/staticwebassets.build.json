@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "j9qX6M8GZW5JkAg+TjAimWM60+W6WWgnCG7bJYNRcLk=",
+  "Source": "AuctioneerService",
+  "BasePath": "_content/AuctioneerService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

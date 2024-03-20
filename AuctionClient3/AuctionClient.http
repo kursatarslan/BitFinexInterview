@@ -1,0 +1,30 @@
+@AuctionClient_HostAddress = http://localhost:5173
+
+GET {{AuctionClient_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+# StartAuction Endpoint
+POST http://localhost:5112/api/Request/StartAuction
+Content-Type: application/json
+
+{
+  "name": "AuctionName",
+  "initialprice": "LastProperty",
+}
+###
+POST http://localhost:5112/api/Request/Bid
+Content-Type: application/json
+
+{
+  "price": 80,
+  "auctionId": 12345
+}
+###
+POST http://localhost:5112/api/Request/Finalize
+Content-Type: application/json
+
+{
+  "auctionId": 12345
+}

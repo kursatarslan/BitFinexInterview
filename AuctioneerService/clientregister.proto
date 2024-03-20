@@ -1,0 +1,22 @@
+syntax = "proto3";
+option csharp_namespace = "AuctioneerService.Services";
+package grpc.reflection.v1alpha;
+service ClientRegisterService {
+  rpc RegisterClient (RegisterRequest) returns (RegisterReply);
+}
+
+message RegisterRequest {
+  string name = 1;
+  string url = 2;
+
+}
+message RegisterReply {
+  string message = 1;
+  repeated ClientReturn clients= 2;
+}
+message ClientReturn {
+  int64 id = 1;
+  string Name=2;
+  string Url=3;
+  bool Status=4;
+}

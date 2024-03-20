@@ -1,0 +1,71 @@
+syntax = "proto3";
+option csharp_namespace = "AuctionGrpcServices";
+
+import "google/protobuf/empty.proto";
+
+package Auction;
+ 
+//Server Streaming RPC
+service AuctionServerService {   
+   
+    //Broadcast Notifications
+    rpc RegisterAuctionNotification (SubscribeMessage) returns (stream Auction);
+    rpc RegisterBidNotification (SubscribeMessage) returns (stream BidNotifyMessage);
+    rpc RegisterAuctionConclusionNotification (SubscribeMessage) returns (stream AuctionConclusion);
+}
+
+//Unary RPC
+service AuctionClientService {   
+
+    rpc RegisterNewClient (RegisterMessage) returns (DefaultResponse);
+
+    rpc Bid (BidMessage) returns (DefaultResponse);
+    rpc GetOpenAuctions (google.protobuf.Empty) returns (OpenAuctions);
+   
+}
+ 
+ 
+message Auction {
+    string id = 1;
+    double price = 2;
+}
+
+//Client Messages
+ 
+message BidMessage {
+    Auction auction = 1;
+    string client = 2;
+    double bid = 3;
+
+}
+ 
+
+message BidNotifyMessage {
+    Auction auction = 1;
+    double bid = 2;
+    string client =3;
+}
+
+message OpenAuctions{
+    repeated Auction auctions= 1;
+}
+
+message AuctionConclusion {
+    Auction auction = 1;
+    string client = 2;
+    double bid = 3;
+}
+
+message DefaultResponse {
+    bool ok = 1;
+}
+
+message SubscribeMessage{
+  
+    string client = 1;
+}
+message RegisterMessage{
+  
+    string client = 1;
+    string clientUrl = 2;
+}
